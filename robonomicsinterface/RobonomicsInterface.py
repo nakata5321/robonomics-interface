@@ -609,7 +609,9 @@ class PubSub:
 
         return self._pubsub_interface.custom_rpc_request("pubsub_peer", None, result_handler)
 
-    def publish(self, topic_name: str, message: str, result_handler: tp.Optional[tp.Callable] = None) -> tp.Any:
+    def publish(
+        self, topic_name: str, message: str, result_handler: tp.Optional[tp.Callable] = None
+    ) -> tp.Dict[str, tp.Union[str, bool, int]]:
         """
         Publish message into the topic by name.
 
